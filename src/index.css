@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+
+@theme {
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  --color-bg-dark: #0a0a0f;
+  --color-surface-dark: #1a1a24;
+  --color-surface-hover-dark: #24243a;
+  --color-accent-blue: #667eea;
+  --color-accent-purple: #764ba2;
+  --color-gold: #ffd60a;
+  --color-hp-red: #ff3b30;
+  --color-xp-blue: #007aff;
+  --color-mp-purple: #bf5af2;
+  --color-success: #30d158;
+  --color-danger: #ff453a;
+  
+  --color-bg-light: #f4f3f2;
+  --color-surface-light: #ffffff;
+  --color-surface-hover-light: #f8f8f8;
+}
+
+@layer base {
+  body {
+    @apply font-mono bg-[family-name:--color-bg-dark] text-white antialiased transition-colors duration-300;
+  }
+}
+
+.rpg-border {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quest-card-glow {
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.15);
+}
+
+.featured-quest-border {
+  border: 2px solid transparent;
+  background-image: linear-gradient(var(--color-surface-dark), var(--color-surface-dark)), 
+                    linear-gradient(to right, var(--color-accent-blue), var(--color-accent-purple));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/20;
+}
